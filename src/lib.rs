@@ -1,6 +1,3 @@
-mod utils;
-
-use snap;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]

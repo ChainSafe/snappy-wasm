@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.4.0
+
+- Tweaks for chainsafe
+
 ## v0.3.0
 
 - Drop wee_alloc dependency (leaks memory)

@@ -1,21 +1,18 @@
 {
-  "name": "snappy-wasm",
-  "version": "0.3.0",
-  "description": "snappy compression/decompression for browsers and Node.js, powered by WebAssembly",
-  "main": "./cjs/snappy.js",
-  "module": "./es/snappy.js",
-  "exports": {
-    "require": "./cjs/snappy.js",
-    "import": "./es/snappy.js"
-  },
-  "types": "./es/snappy.d.ts",
+  "name": "@chainsafe/snappy-wasm",
+  "version": "0.4.1",
+  "description": "snappy compression/decompression for Node.js, powered by WebAssembly",
+  "type":"commonjs",
+  "exports": "./pkg/snappy.js",
+  "types": "./pkg/snappy.d.ts",
+  "files": [
+    "pkg"
+  ],
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "build": "npm run build:es && npm run build:cjs",
-    "build:es": "wasm-pack build --target web -d es --release",
-    "build:cjs": "wasm-pack build --target nodejs -d cjs --release",
-    "prepack": "rm -f {es,cjs}/{.gitignore,package.json,README.md}",
+    "build": "RUSTFLAGS=\"-C target-feature=+simd128\" wasm-pack build --target nodejs --release",
+    "prepack": "rm -f pkg/{.gitignore,package.json,README.md,LICENSE}",
     "test": "wasm-pack test --firefox --headless"
   },
   "keywords": [
@@ -27,5 +24,6 @@
     "compression"
   ],
   "author": "Nick Frasser <nick@nfrasser.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "packageManager": "yarn@1.22.22+sha256.c17d3797fb9a9115bf375e31bfd30058cac6bc9c3b8807a3d8cb2094794b51ca"
 }
