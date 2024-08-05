@@ -40,21 +40,16 @@ For use exclusively in Node.js, the [`snappy`](https://www.npmjs.com/package/sna
 
 ### Compress data
 
-```js
-const data = "data"
-const compressed = snappy.compress(data)
+```ts
+const data: Uint8Array = ...;
+const compressed: Uint8Array = snappy.compress(data)
 ```
-
-This returns a `Uint8Array` instance
 
 ### Decompress data
 
-```js
-const decompressed = snappy.decompress(compressed)
+```ts
+const decompressed: Uint8Array = snappy.decompress(compressed)
 ```
-
-Use `snappy.compress_raw(data)` and `snappy.decompress_raw(compressed)` to
-compress/decompress raw data (provided and returned as `Uint8Array`)
 
 ### 🛠️ Build with `wasm-pack build` (via npm script)
 
@@ -79,8 +74,6 @@ npm publish
 
 * [`wasm-bindgen`](https://github.com/rustwasm/wasm-bindgen) for communicating
   between WebAssembly and JavaScript.
-* [`console_error_panic_hook`](https://github.com/rustwasm/console_error_panic_hook)
-  for logging panic messages to the developer console.
 
 ## 👾 Development
 

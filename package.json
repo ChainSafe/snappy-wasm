@@ -1,6 +1,6 @@
 {
   "name": "@chainsafe/snappy-wasm",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "snappy compression/decompression for Node.js, powered by WebAssembly",
   "type":"commonjs",
   "exports": "./pkg/snappy.js",
