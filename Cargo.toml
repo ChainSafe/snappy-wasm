@@ -15,7 +15,7 @@ default = []
 
 [dependencies]
 wasm-bindgen = "0.2.92"
-snap = "1"
+snap = "1.1.2"
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.42"
@@ -25,8 +25,8 @@ lto = true
 strip = "symbols"
 
 [package.metadata.wasm-pack.profile.dev]
-wasm-opt = ['--enable-simd']
+wasm-opt = ['--enable-simd', '--enable-bulk-memory']
 [package.metadata.wasm-pack.profile.profiling]
-wasm-opt = ['--enable-simd']
+wasm-opt = ['--enable-simd', '--enable-bulk-memory']
 [package.metadata.wasm-pack.profile.release]
-wasm-opt = ['--enable-simd']
+wasm-opt = ['--enable-simd', '--enable-bulk-memory']

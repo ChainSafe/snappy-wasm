@@ -13,7 +13,8 @@
   "scripts": {
     "build": "RUSTFLAGS=\"-C target-feature=+simd128\" wasm-pack build --target nodejs --release",
     "prepack": "rm -f pkg/{.gitignore,package.json,README.md,LICENSE}",
-    "test": "wasm-pack test --firefox --headless"
+    "test": "wasm-pack test --firefox --headless",
+    "test:node": "npm run build && node tests/node.cjs"
   },
   "keywords": [
     "snappy",
